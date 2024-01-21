@@ -1,0 +1,30 @@
+﻿@model List<ServiceListItemVM>
+
+<div style="margin:3rem">
+    <a class="btn btn-primary" asp-action="Create">Create</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th colspan="2">Buttons</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td><img style="width:10rem; height:10rem; object-fit:cover" src="@item.Image"> </td>
+                    <td><a class="btn btn-primary" asp-action="Update" asp-controller="Service"  asp-route-id="@item.Id">Update</a></td>
+                    <td><a class="btn btn-primary" asp-action="Delete" asp-controller="Service" asp-route-id="@item.Id">Delete</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

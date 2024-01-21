@@ -1,0 +1,23 @@
+﻿@model ServiceCreateVM
+
+<div style="margin:3rem">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Title">Title</label>
+            <input type="text" class="form-control" asp-for="Title" placeholder="Title">
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <input type="text" class="form-control" asp-for="Description" placeholder="Description">
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image">Image</label>
+            <input class="form-control" asp-for="Image">
+            <span asp-validation-for="Image"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
